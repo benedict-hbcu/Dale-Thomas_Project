@@ -30,7 +30,7 @@ The goal of this project is to inform those with little to no knowledge of Chris
   <br>
 Navigation Bar
   
-  As a user, I want to be able to see some of the different things that this platform has to offer, be able to click an area of interest, and be redirected to the content.
+* As a user, I want to be able to see some of the different things that this platform has to offer, be able to click an area of interest, and be redirected to the content.
   
 Home Page Slideshow 
   
