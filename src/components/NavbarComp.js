@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import {
     BrowserRouter as Router,
-    Switch,
+    Routes,
     Route,
     Link
 } from "react-router-dom";
@@ -30,11 +30,11 @@ export default class NavbarComp extends Component {
                 <div>
                     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                     <Container>
-                        <Navbar.Brand as={Link} to="/home"><img src={logo} height={30} width ={30}alt="logo"/></Navbar.Brand>
+                        <Navbar.Brand as={Link} to="/"><img src={logo} height={30} width ={30}alt="logo"/></Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link as={Link} to={"/home"}>Home</Nav.Link>
+                            <Nav.Link as={Link} to={"/"}>Home</Nav.Link>
                             <Nav.Link as={Link} to={"/who"}>Who is a Christian?</Nav.Link>
                             <Nav.Link as={Link} to={"/hoax"}>Isn't Christianity a Hoax?</Nav.Link>
                             <Nav.Link as={Link} to={"/why"}>What Does this Have to Do with Me?</Nav.Link>
@@ -53,44 +53,20 @@ export default class NavbarComp extends Component {
     
                 </div>
                 <div>
-                    <Switch>
-                        <Route path="/">
-                            <Home/>
-                        </Route>
-                        <Route path="/who">
-                            <Who/>
-                        </Route>
-                        <Route path="/hoax">
-                            <Hoax/>
-                        </Route>
-                        <Route path="/why">
-                            <Why />
-                        </Route>
-                        <Route path="/questions">
-                            <Questions/>
-                        </Route>
-                        <Route path="/devotion">
-                            <Devotion/>
-                        </Route>
-                        <Route path="/prayer">
-                            <Prayer/>
-                        </Route>
-                        <Route path="/gallery">
-                            <Gallery/>
-                        </Route>
-                        <Route path="/Chat">
-                            <Chatroom/>
-                        </Route>
-                        <Route path="/surprise">
-                            <Surprise/>
-                        </Route>
-                        <Route path="/bible">
-                            <Bible/>
-                        </Route>
-                        <Route path="/therapy">
-                            <Therapists/>
-                        </Route>
-                    </Switch>
+                    <Routes>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="who" element={<Who/>}/>
+                        <Route path="hoax" element={<Hoax/>}/>
+                        <Route path="why" element={<Why/>}/>
+                        <Route path="questions" element={<Questions/>}/>
+                        <Route path="devotion" element={<Devotion/>}/>
+                        <Route path="prayer" element={<Prayer/>}/>
+                        <Route path="gallery" element={<Gallery/>}/>
+                        <Route path="chat" element={<Chatroom/>}/>
+                        <Route path="surprise" element={<Surprise/>}/>
+                        <Route path="bible" element={<Bible/>}/>
+                        <Route path="therapy" element={<Therapists/>}/>
+                    </Routes>
                 </div>
             </Router>
         )
