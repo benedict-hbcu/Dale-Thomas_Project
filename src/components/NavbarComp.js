@@ -28,27 +28,27 @@ export default class NavbarComp extends Component {
         return(
             <Router>
                 <div>
-                    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                    <Container>
-                        <Navbar.Brand as={Link} to="/"><img src={logo} height={30} width ={30}alt="logo"/></Navbar.Brand>
-                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link as={Link} to={"/"}>Home</Nav.Link>
-                            <Nav.Link as={Link} to={"/who"}>Who is a Christian?</Nav.Link>
-                            <Nav.Link as={Link} to={"/hoax"}>Isn't Christianity a Hoax?</Nav.Link>
-                            <Nav.Link as={Link} to={"/why"}>What Does this Have to Do with Me?</Nav.Link>
-                            <Nav.Link as={Link} to={"/questions"}>Common Questions</Nav.Link>
-                            <Nav.Link as={Link} to={"/devotion"}>Devotion</Nav.Link>
-                            <Nav.Link as={Link} to={"/prayer"}>Prayer</Nav.Link>
-                            <Nav.Link as={Link} to={"/gallery"}>Gallery</Nav.Link>
-                            <Nav.Link as={Link} to={"/chat"}>Hmu</Nav.Link>
-                            <Nav.Link as={Link} to={"/surprise"}>Click Here for a Surprise!</Nav.Link>
-                            <Nav.Link as={Link} to={"/bible"}>Da Bible</Nav.Link>
-                            <Nav.Link as={Link} to={"/therapy"}>Christian... Therapy?</Nav.Link>
-                        </Nav>
-                        </Navbar.Collapse>
-                    </Container>
+                    <Navbar collapseOnSelect expand="false" bg="dark" variant="dark">
+                        <Container>
+                            <Navbar.Brand as={Link} to="/"><img src={logo} height={30} width ={30}alt="logo"/></Navbar.Brand>
+                            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                            <Navbar.Collapse id="responsive-navbar-nav">
+                                <Nav className="me-auto">
+                                    <Nav.Link as={Link} to={"/"} onSelect>Home</Nav.Link>
+                                    <Nav.Link as={Link} to={"/who"} onSelect>Who is a Christian?</Nav.Link>
+                                    <Nav.Link as={Link} to={"/hoax"}>Isn't Christianity a Hoax?</Nav.Link>
+                                    <Nav.Link as={Link} to={"/why"}>What Does this Have to Do with Me?</Nav.Link>
+                                    <Nav.Link as={Link} to={"/questions"}>Common Questions</Nav.Link>
+                                    <Nav.Link as={Link} to={"/devotion"}>Devotion</Nav.Link>
+                                    <Nav.Link as={Link} to={"/prayer"}>Prayer</Nav.Link>
+                                    <Nav.Link as={Link} to={"/gallery"}>Gallery</Nav.Link>
+                                    <Nav.Link as={Link} to={"/chat"}>Hmu</Nav.Link>
+                                    <Nav.Link as={Link} to={"/surprise"}>Click Here for a Surprise!</Nav.Link>
+                                    <Nav.Link as={Link} to={"/bible"}>Da Bible</Nav.Link>
+                                    <Nav.Link as={Link} to={"/therapy"}>Christian... Therapy?</Nav.Link>
+                                </Nav>
+                            </Navbar.Collapse>
+                        </Container>
                     </Navbar>
     
                 </div>
