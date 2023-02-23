@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
 
-export default class Therapists extends Component {
+export default class Lifestyle extends Component {
     render() {
         return(
             <div>
-                <h1> Christian... Therapy?</h1>
+                <h1> Lifestyle</h1>
             </div>
         )
     }

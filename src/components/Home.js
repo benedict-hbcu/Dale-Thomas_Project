@@ -31,8 +31,9 @@ export default class Home extends Component {
             className: "slides"
         }
         return(
-            <div style = {{padding: 24}}>
-                <h1> Ew...</h1>
+            <div style = {{padding: 24}} className='bg-warning shadow-1-strong'>
+                <h1> ...</h1> 
+                <h5><i>"Let us not give up the habit of meeting together, as some are doing. Instead, let us encourage one another all the more, since you see that the Day of the Lord is coming nearer." Hebrews 10:25 (NLT)</i></h5>
                 <Slider{...settings}>
                 {photos.map((photo => {
                         return(

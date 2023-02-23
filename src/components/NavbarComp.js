@@ -20,7 +20,7 @@ import Gallery from './Gallery';
 import Chatroom from './Chatroom';
 import Surprise from './Surprise';
 import Bible from './Bible';
-import Therapists from './Therapists';
+import Lifestyle from './Lifestyle';
 import logo from './ichthus_cross.jpg';
 
 export default class NavbarComp extends Component {
@@ -28,24 +28,24 @@ export default class NavbarComp extends Component {
         return(
             <Router>
                 <div>
-                    <Navbar collapseOnSelect expand="false" bg="dark" variant="dark">
+                    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                         <Container>
                             <Navbar.Brand as={Link} to="/"><img src={logo} height={30} width ={30}alt="logo"/></Navbar.Brand>
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="me-auto">
-                                    <Nav.Link as={Link} to={"/"} onSelect>Home</Nav.Link>
-                                    <Nav.Link as={Link} to={"/who"} onSelect>Who is a Christian?</Nav.Link>
-                                    <Nav.Link as={Link} to={"/hoax"}>Isn't Christianity a Hoax?</Nav.Link>
-                                    <Nav.Link as={Link} to={"/why"}>What Does this Have to Do with Me?</Nav.Link>
+                                    <Nav.Link as={Link} to={"/"} >Home</Nav.Link>
+                                    <Nav.Link as={Link} to={"/who"} class="text-warning">Who are Christians?</Nav.Link>
+                                    <Nav.Link as={Link} to={"/hoax"} > Is It a Hoax?</Nav.Link>
+                                    <Nav.Link as={Link} to={"/why"}>Christianity &  Me?</Nav.Link>
                                     <Nav.Link as={Link} to={"/questions"}>Common Questions</Nav.Link>
                                     <Nav.Link as={Link} to={"/devotion"}>Devotion</Nav.Link>
                                     <Nav.Link as={Link} to={"/prayer"}>Prayer</Nav.Link>
                                     <Nav.Link as={Link} to={"/gallery"}>Gallery</Nav.Link>
                                     <Nav.Link as={Link} to={"/chat"}>Hmu</Nav.Link>
-                                    <Nav.Link as={Link} to={"/surprise"}>Click Here for a Surprise!</Nav.Link>
-                                    <Nav.Link as={Link} to={"/bible"}>Da Bible</Nav.Link>
-                                    <Nav.Link as={Link} to={"/therapy"}>Christian... Therapy?</Nav.Link>
+                                    <Nav.Link as={Link} to={"/surprise"}>Click  for Surprise</Nav.Link>
+                                    <Nav.Link as={Link} to={"/bible"}>The Bible</Nav.Link>
+                                    <Nav.Link as={Link} to={"/lifestyle"}>Lifestyle</Nav.Link>
                                 </Nav>
                             </Navbar.Collapse>
                         </Container>
@@ -65,7 +65,7 @@ export default class NavbarComp extends Component {
                         <Route path="chat" element={<Chatroom/>}/>
                         <Route path="surprise" element={<Surprise/>}/>
                         <Route path="bible" element={<Bible/>}/>
-                        <Route path="therapy" element={<Therapists/>}/>
+                        <Route path="lifestyle" element={<Lifestyle/>}/>
                     </Routes>
                 </div>
             </Router>
