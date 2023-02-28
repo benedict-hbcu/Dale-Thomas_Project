@@ -2,9 +2,6 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Slider from "react-slick";
-import 'react-bootstrap/Container';
-import 'react-bootstrap/Nav';
-import 'react-bootstrap/Navbar';
 import NavbarComp from "../components/NavbarComp.js"
 const inter = Inter({ subsets: ['latin'] })
 const photos = [
