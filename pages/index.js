@@ -38,22 +38,24 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <NavbarComp/>
-        <div style={{ padding: 24 }}>
-          <h1> Ew...</h1>
-          <Slider{...settings}>
-            {photos.map((photo => {
-              return (
-                <div>
-                  <img width="100%" src={photo.url} />
-                </div>
-              )
-            }))}
-          </Slider>
-        </div>
+      <div class="homeimg">
+        <main className={styles.main} >
+          <NavbarComp/>
+          <div style={{ padding: 24 }}>
+            <h1> ...</h1>
+            <Slider{...settings}>
+              {photos.map((photo => {
+                return (
+                  <div>
+                    <img width="100%" src={photo.url} />
+                  </div>
+                )
+              }))}
+            </Slider>
+          </div>
 
-      </main>
+        </main>
+      </div>
     </>
   )
 }
