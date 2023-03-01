@@ -193,31 +193,40 @@ body{
 }
 .pbinimg{
   background-image: url("../components/pbimg.jpg");
-  background-repeat: no-repeat;
+  background-repeat: no-repeat center center fixed;
   background-size: cover;
   color:white;
   padding-top: 30px;
   padding-right: 30px;
   padding-bottom: 30px;
   padding-left: 30px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 .pwallimg{
   background-image: url("../components/pentecost.jpg");
-  background-repeat: no-repeat;
+  background-repeat: no-repeat center center fixed;
   background-size: cover;
   color:black;
   padding-top: 30px;
   padding-right: 30px;
   padding-bottom: 30px;
   padding-left: 30px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 .wyaimg{
   background-image: url("../components/fellowship.jpg");
-  background-repeat: no-repeat;
+  background-repeat: no-repeat center center fixed;
   background-size: cover;
   color: rgb(42, 130, 206);
   padding-top: 30px;
   padding-right: 30px;
   padding-bottom: 30px;
   padding-left: 30px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
