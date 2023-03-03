@@ -17,7 +17,7 @@ export default function PrayerBinPage() {
         </Head>
         <main className={styles.main}>
           <NavbarComp/>
-          <div class="pbinimg">
+          <div className="pbinimg">
             <h1>Prayer Bin</h1>
             <p><i><b>"And pray in the Spirit on all occasions with all kinds of prayers and requests. With this in mind, be alert and always keep on praying for all the Lord’s people." Ephesians 6:18</b></i></p>
             <p><b>Dear brothers and sisters, life is tough, but our God is tougher. Although we are far apart, we are part of one body. You are loved not only by the Father, Son, and Spirit, but also by us, your family in Christ. That being said, please let us know how we can pray for you.</b></p>

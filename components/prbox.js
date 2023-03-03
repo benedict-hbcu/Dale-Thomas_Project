@@ -1,45 +1,31 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
  
-const ContactPage = () => {
-    const [submitterPrayer, setSubmitterPrayer] = useState("");
-    const router = useRouter();
-    const confirmationScreenVisible =
-    router.query?.success && router.query.success === "true";
-    const formVisible = !confirmationScreenVisible;
+export default function ContactPage(){
+    const [prayerText, setPrayerText] = React.useState("");
+    const handlePrayerTextChange = (event) => setPrayerText(event.target.value);
+    const handleSubmit = () => {
+        const prayer = {
+            text: prayerText
+        };
+
+        console.log("prayer", prayer);
  
-    const ConfirmationMessage = (
-        <React.Fragment>
-            <p>
-                You're covered. 🙏 🩸
-            </p>
- 
-            <button onClick={() => router.replace("/contact", undefined, { shallow: true })}> Submit Another Prayer </button>
-        </React.Fragment>
-    );
- 
-    const ContactForm = (
-        <form
-            className="container1"
-            method="POST"
-            name="contact-form"
-            action="contact/?success=true"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-        >
-    
-            <label htmlFor="message">Prayer Request Bin *</label>
-            <p> </p>
-            <textarea id="message" name="message" required onChange={(e)=> setSubmitterPrayer(e.target.value)}/>
-            <p> </p>
-            <button type="submit" className="button" onClick={() => router.push('/prayerwall')}>Submit</button>
-        </form>
-    );
+    };
  
     return (
         <div className="container1">
-
-      <div>{formVisible ? ContactForm : ConfirmationMessage}</div>
+            <div>
+                <textarea
+                    value={prayerText}
+                    onChange={handlePrayerTextChange}
+                    placeholder="Enter your prayer request here"
+                />
+                <p> </p>
+                    <button type="submit" className="button" onClick={handleSubmit}>Submit</button>
+                    <p> </p>
+                    <p> </p>
+        </div>
       <footer></footer>
       <style jsx global>
         {`
@@ -95,4 +81,3 @@ const ContactPage = () => {
   );
 };
  
-export default ContactPage;
