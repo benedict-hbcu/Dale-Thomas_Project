@@ -163,23 +163,30 @@ body{
 }
 
 .label {
+  height: 100vh;
   background-color: gold;
   background-blend-mode: darken;
   color: black;
 }
 .home{
+  height: 100vh;
   background-color: #282c34;
   color: white;
 }
 .homeimg{
+  height: 100vh;
   background-image: url("../components/worship.png");
-  background-repeat: no-repeat;
+  background-repeat: no-repeat center center fixed;
   backdrop-filter: blur(20px);
   background-size: cover;
   color:white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 .blur{
+  height: 100vh;
   background: rgba(255, 255, 255, 0.2);
   height: 100vh;
 	width: 50%;
@@ -192,6 +199,7 @@ body{
   padding: 0px;
 }
 .pbinimg{
+  height: 100vh;
   background-image: url("../components/pbimg.jpg");
   background-repeat: no-repeat center center fixed;
   background-size: cover;
@@ -205,6 +213,7 @@ body{
   -o-background-size: cover;
 }
 .pwallimg{
+  height: 100vh;
   background-image: url("../components/pentecost.jpg");
   background-repeat: no-repeat center center fixed;
   background-size: cover;
@@ -218,6 +227,7 @@ body{
   -o-background-size: cover;
 }
 .wyaimg{
+  height:100vh;
   background-image: url("../components/fellowship.jpg");
   background-repeat: no-repeat center center fixed;
   background-size: cover;

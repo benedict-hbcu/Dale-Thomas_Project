@@ -1,10 +1,11 @@
 import { google } from 'googleapis';
 import {GoogleSpreadsheet} from 'google-spreadsheet'
-const SPREADSHEET_ID = process.env.NEXT_PUBLIC_SPREADSHEET_ID;
-const SHEET_ID = process.env.NEXT_PUBLIC_SHEET_ID;
-const GOOGLE_CLIENT_EMAIL = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_EMAIL;
-const GOOGLE_SERVICE_PRIVATE_KEY =process.env.NEXT_PUBLIC_GOOGLE_SERVICE_PRIVATE_KEY;
+const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
+const SHEET_ID = process.env.SHEET_ID;
+const GOOGLE_CLIENT_EMAIL = process.env.GOOGLE_CLIENT_EMAIL;
+const GOOGLE_SERVICE_PRIVATE_KEY =process.env.GOOGLE_SERVICE_PRIVATE_KEY;
 const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
+
 async function getPrayer() {
   try {
     const target = ['https://www.googleapis.com/auth/spreadsheets.readonly'];

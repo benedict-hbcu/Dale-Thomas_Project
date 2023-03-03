@@ -6,8 +6,15 @@ export default function ContactPage(){
     const handlePrayerTextChange = (event) => setPrayerText(event.target.value);
     const handleSubmit = () => {
         const prayer = {
-            text: prayerText
+            PrayerRequest: prayerText
         };
+        fetch('/api/save-prayer', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: prayer,
+        })
 
         console.log("prayer", prayer);
  
