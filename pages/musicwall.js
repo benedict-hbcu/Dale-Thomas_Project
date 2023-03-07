@@ -4,9 +4,24 @@ import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import { Inter } from 'next/font/google'
 import Card from "../components/Card.js"
+//import top-tracks from "../pages/top-tracks.js"
 
 
 export default function MusicWallPage() {
+
+  const [tracks, setTracks] = React.useState([])
+
+  React.useEffect(() => {
+    fetch("/api/track-recommendations")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data)
+      setTracks(data.tracks)
+    })
+  }, [])
+
+    console.log(tracks)
+
     return (
       <>
         <Head>
@@ -21,11 +36,16 @@ export default function MusicWallPage() {
             <h1 class="label">Music Wall</h1>
           </div>
           <div className='music'>
-            <Card
-            title='BOB'
-            imageurl=''
-            body=''
-            />
+            {tracks.map((track) => (
+              <Card
+              title={track.name}
+              imgUrl={track.album.images[0].url}
+              artists={track.artists.map((artist) => artist.name).join(", ")}
+              link={track.external_urls.spotify}
+              />
+            ))}
+
+            
           </div>
         </main>
       </>
