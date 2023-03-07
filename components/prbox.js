@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+
  
 export default function ContactPage(){
     const [prayerText, setPrayerText] = React.useState("");
@@ -8,18 +9,18 @@ export default function ContactPage(){
         const prayer = {
             PrayerRequest: prayerText
         };
-        fetch('/api/save-prayer', {
+        fetch('/api/save-prayers', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: prayer,
+          body: JSON.stringify(prayer),
         })
 
         console.log("prayer", prayer);
  
     };
- 
+
     return (
         <div className="container1">
             <div>

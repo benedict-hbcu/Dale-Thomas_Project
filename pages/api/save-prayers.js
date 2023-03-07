@@ -1,11 +1,16 @@
-import { savePrayer } from "../../components/libs/sheets"
+import { savePrayer, constants } from "../../components/libs/sheets"
 
-export default function save(req, res){
+export default async function save(req, res){
     if (req.method === 'POST'){
-        savePrayer(req.body);
+        try{
+            await savePrayer(req.body)
+            res.status(200).send(true)
+        }
+       catch(e){
+        res.status(500).send({message: "Error occurred"})
+      }
     }
-    else {
-        res.status(405).send({ message: 'Only POST requests allowed' })
-    return
+    else{
+      res.status(405).send({message: "Method not supported"})
     }
 }
