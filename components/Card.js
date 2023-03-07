@@ -2,11 +2,11 @@ import React from 'react';
 import styles from '@/styles/Home.module.css'
 
 
-function Card({title,imagurl,body}) {
+function Card({title,imgUrl,body, artists, link}) {
     return (
         <div className='Card-container'>
             <div className='image-contianer'>
-                <img src= {imagurl} alt=''/> 
+                <img src= {imgUrl} alt=''/> 
 
             </div>
             <div clasName="Card-content">
@@ -17,9 +17,12 @@ function Card({title,imagurl,body}) {
                 <div className="card-body">
                     <p>{body}</p>
                 </div>
+                <div>
+                    <p>{artists}</p>
+                </div>
                 <div className="btn">
                     <button> 
-                        <a>
+                        <a href={link} target="_blank" rel='noopener noferrer'>
                             view more
                         </a>
                     </button>
