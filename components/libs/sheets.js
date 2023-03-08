@@ -8,9 +8,9 @@ const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
 
 const target = ["https://www.googleapis.com/auth/spreadsheets"];
 const jwt = new google.auth.JWT(
-  process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+  process.env.GOOGLE_CLIENT_EMAIL,
   undefined,
-  (process.env.GOOGLE_SHEETS_PRIVATE_KEY || "").split("\\n").join("\n"),
+  (process.env.GOOGLE_SERVICE_PRIVATE_KEY || "").split("\\n").join("\n"),
   target
 );
 const sheets = google.sheets({ version: "v4", auth: jwt });
@@ -67,8 +67,11 @@ async function getPrayer() {
 // } 
  const savePrayer= async (values) => {
   console.log(process.env.SPREADSHEET_ID)
+  console.log(process.env.GOOGLE_CLIENT_EMAIL)
+  console.log(values)
+  process.env.GOOGLE_SERVICE_PRIVATE_KEY 
   const request = {
-    spreadsheetId: prcoess.env.SPREADSHEET_ID,
+    spreadsheetId: process.env.SPREADSHEET_ID,
     range: "Sheet1",
     valueInputOption: "USER_ENTERED",
     insertDataOption: "INSERT_ROWS",

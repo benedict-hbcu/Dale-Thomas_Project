@@ -13,13 +13,11 @@ export default function ContactPage(){
         const tstamp= {
           Timestamp: timestamp
         }
-        const body = JSON.stringify([prayer.PrayerRequest,tstamp.Timestamp]);
-        fetch('/api/save-prayers', {
-          method: 'POST', body
-        })
+        const body = JSON.stringify([prayerText,timestamp]);
+        fetch('/api/save-prayers', {method: 'POST', body})
 
         console.log("prayer", prayer);
-        console.log(tstamp);
+        console.log(body);
  
     };
 
