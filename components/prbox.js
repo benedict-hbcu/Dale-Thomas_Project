@@ -1,23 +1,25 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-
  
 export default function ContactPage(){
     const [prayerText, setPrayerText] = React.useState("");
     const handlePrayerTextChange = (event) => setPrayerText(event.target.value);
     const handleSubmit = () => {
+        const time= Date.now();
+        const timestamp =new Date(time);
         const prayer = {
             PrayerRequest: prayerText
         };
+        const tstamp= {
+          Timestamp: timestamp
+        }
+        const body = JSON.stringify([prayer.PrayerRequest,tstamp.Timestamp]);
         fetch('/api/save-prayers', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(prayer),
+          method: 'POST', body
         })
 
         console.log("prayer", prayer);
+        console.log(tstamp);
  
     };
 

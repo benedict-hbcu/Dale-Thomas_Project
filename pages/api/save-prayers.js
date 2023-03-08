@@ -8,6 +8,7 @@ export default async function save(req, res){
         }
        catch(e){
         res.status(500).send({message: "Error occurred"})
+        console.log(req.body)
       }
     }
     else{
