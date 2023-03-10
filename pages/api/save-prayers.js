@@ -3,7 +3,7 @@ import { savePrayer, constants } from "../../components/libs/sheets"
 export default async function save(req, res){
     if (req.method === 'POST'){
         try{
-            await savePrayer(JSON.parse(req.body))
+            await savePrayer([JSON.parse(req.body)])
             res.status(200).send(true)
         }
        catch(e){

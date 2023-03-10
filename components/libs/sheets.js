@@ -39,7 +39,6 @@ async function getPrayer() {
         code: row[4],
         browser: row[5],
         short_name: row[17],
-        emojipedia_slug: row[18],
         descriptions: row[19],
       }));
     }
