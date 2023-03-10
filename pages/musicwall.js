@@ -4,6 +4,9 @@ import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import { Inter } from 'next/font/google'
 import Card from "../components/Card.js"
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
 //import top-tracks from "../pages/top-tracks.js"
 
 
@@ -22,6 +25,18 @@ export default function MusicWallPage() {
 
     console.log(tracks)
 
+{/* <div class="section group">
+    <div class="col span_1_of_3">
+        1
+    </div>
+    <div class="col span_1_of_3">
+        2
+    </div>
+    <div class="col span_1_of_3">
+        3
+    </div>
+</div> */}
+
     return (
       <>
         <Head>
@@ -36,15 +51,22 @@ export default function MusicWallPage() {
             <h1 class="label">Music Wall</h1>
           </div>
           <div className='music'>
+          <div class="container">      
+          </div>
+          <div class="container">
+        </div>
+          <Row xs={1} md={2} className="g-4">
             {tracks.map((track) => (
+              <Col>
               <Card
               title={track.name}
               imgUrl={track.album.images[0].url}
               artists={track.artists.map((artist) => artist.name).join(", ")}
               link={track.external_urls.spotify}
               />
+              </Col>
             ))}
-
+          </Row>
             
           </div>
         </main>
