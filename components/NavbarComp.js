@@ -15,7 +15,7 @@ export default function NavbarComp(){
                         <Navbar.Brand> < a href="/"> <Image src={logo} height={30} width={30}alt="logo"/></a></Navbar.Brand>  
                         <Navbar.Toggle aria-controls="responvise-navbar-nav"/>
                         <Navbar.Collapse id="responvise-navbar-nav">
-                            <Nav class Name="me-auto">
+                            <Nav className="me-auto">
                                 <Nav.Link href="/">Home</Nav.Link>
                                 <Nav.Link href="/prayerbin">prayer bin</Nav.Link>
                                 <Nav.Link href="/prayerwall">prayer Wall </Nav.Link>

@@ -5,14 +5,22 @@ export default function ContactPage(){
     const [prayerText, setPrayerText] = React.useState("");
     const handlePrayerTextChange = (event) => setPrayerText(event.target.value);
     const handleSubmit = () => {
+        const time= Date.now();
+        const timestamp =new Date(time);
         const prayer = {
-            text: prayerText
+            PrayerRequest: prayerText
         };
+        const tstamp= {
+          Timestamp: timestamp
+        }
+        const body = JSON.stringify([prayerText,timestamp]);
+        fetch('/api/save-prayers', {method: 'POST', body})
 
         console.log("prayer", prayer);
+        console.log(body);
  
     };
- 
+
     return (
         <div className="container1">
             <div>
