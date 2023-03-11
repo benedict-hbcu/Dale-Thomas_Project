@@ -20,7 +20,7 @@ export default function NavbarComp(){
                                 <Nav.Link href="/prayerbin">prayer bin</Nav.Link>
                                 <Nav.Link href="/prayerwall">prayer Wall </Nav.Link>
                                 <Nav.Link href="/musicwall">Music Wall</Nav.Link>
-                                <Nav.Link herf ="/wya">WYA?</Nav.Link>
+                                <Nav.Link href="/wya">WYA?</Nav.Link>
                             </Nav>  
                         </Navbar.Collapse>
 

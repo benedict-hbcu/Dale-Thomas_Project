@@ -3,6 +3,8 @@ import NavbarComp from "../components/NavbarComp.js"
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import { Inter } from 'next/font/google'
+import Searchbarcomp from "../components/searchbar.js" 
+
 
 
 export default function WyaPage() {
@@ -17,6 +19,7 @@ export default function WyaPage() {
         <main className={styles.main} >
           <NavbarComp/>
           <div class="wyaimg">
+          <Searchbarcomp/>
             <h1 >Wya?</h1>
             <p><i>"And let us not neglect our meeting together, as some people do, but encourage one another, especially now that the day of his return is drawing near." Hebrews 10:25</i></p>
             <p>Dearest family, life is hectic and money's gotta make, but community is essential to your walk with God. If you do not have a church, you are missing out. Let's find you one!</p>
