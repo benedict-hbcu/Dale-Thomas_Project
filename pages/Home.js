@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import devotions from "../components/devotion.json";
+ type;
+devid= Math.floor(Math.random() * 8)+1;
 const photos = [
     {
         name: 'photo 1',
@@ -30,6 +33,7 @@ export default class Home extends Component {
             slidestoscroll: 1,
             className: "slides"
         }
+        console.log(devotions[1]);
         return(
             <div style = {{padding: 24}}>
                 <h1> Ew...</h1>
@@ -42,6 +46,7 @@ export default class Home extends Component {
                         )
                     }))}
                 </Slider>
+                
                 
             </div>
         )

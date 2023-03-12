@@ -4,6 +4,9 @@ import styles from '@/styles/Home.module.css'
 import Slider from "react-slick";
 import NavbarComp from "../components/NavbarComp.js"
 const inter = Inter({ subsets: ['latin'] })
+const devid= Math.floor(Math.random() * 7);
+import devotions from '../components/devotion.json'
+// const [showPosts, setshowPosts] = useState('')
 const photos = [
   {
     name: 'photo 1',
@@ -28,8 +31,42 @@ const settings = {
   slidestoscroll: 1,
   className: "slides"
 }
+// let displayData
+// function pulldevotion(){
+//   fetch('api/devotion.json')
+//   .then(response=>response.json())
+//   .then(responseData =>{
+//     console.log(responseData)
+//     displayData = responseData.map(function(todo){
+//       return(
+//         <p key={todo.id}>{todo.title}</p>
+//       )
+//     })
+//     console.log(responseData)
+//     setshowPosts(displayData)
+//   })
+// }
 
 export default function Home() {
+  // displayData = data.map(function(todo){
+  //   return(
+  //     <p key={todo.id}> {todo.title}</p>
+  //   )
+  // })
+  // console.log(devotions[0]["devotions"])
+  const Devotional = () =>{
+    let data = require('../components/devotion.json');
+    return(
+      <>
+      <div>
+        <div><p>Title : {data[devid].title}</p></div>
+        <div> <p>{data[devid].scripture}</p> </div>
+        <div><p>{data[devid].message}</p></div>
+        <div><p>{data[devid].prayer}</p></div>
+      </div>
+      </>
+    )
+    }
   return (
     <>
       <Head>
@@ -42,7 +79,7 @@ export default function Home() {
         <main className={styles.main} >
           <NavbarComp/>
           <div style={{ padding: 24 }}>
-            <h1> ...</h1>
+            <h1> Prayer Place</h1>
             <Slider{...settings}>
               {photos.map((photo => {
                 return (
@@ -52,10 +89,16 @@ export default function Home() {
                 )
               }))}
             </Slider>
+            Devotional()
           </div>
-
         </main>
       </div>
     </>
   )
 }
+
+// export async function getServerSideProps(){
+//   const res = await fetch ('/../components/devotion.json')
+//   const data = await res.json()
+//   return {pops: {data}}
+// }
