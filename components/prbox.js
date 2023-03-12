@@ -7,13 +7,14 @@ export default function ContactPage(){
     const handleSubmit = () => {
         const time= Date.now();
         const timestamp =new Date(time);
+        const ts =timestamp.toLocaleTimeString();
         const prayer = {
             PrayerRequest: prayerText
         };
         const tstamp= {
           Timestamp: timestamp
         }
-        const body = JSON.stringify([prayerText,timestamp]);
+        const body = JSON.stringify([prayerText,ts]);
         fetch('/api/save-prayers', {method: 'POST', body})
 
         console.log("prayer", prayer);
