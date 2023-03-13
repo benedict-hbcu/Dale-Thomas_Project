@@ -162,12 +162,10 @@ body{
   right: 5%;
 }
 
-/* .label {
-  height: 100vh;
+ .musicwall {
   background-color: gold;
-  background-blend-mode: darken;
-  color: black;
-} */
+  
+} 
 .home{
   height: 100vh;
   background-color: #282c34;
@@ -279,12 +277,13 @@ h3,p{
 .btn{
   display: flex;
   justify-content: center;
+  background-color: rgb(187, 15, 15);
   
 }
 
 .btn button{
   padding: 0.5rem;
-  background-color: white;
+  background-color: rgb(187, 15, 15);
   border: none;
   transition: 0.2s;
   margin-bottom: 0.5rem;
@@ -299,7 +298,7 @@ h3,p{
 
 a{
   text-transform: uppercase;
-  color: #1B9CfC;
+  color: #4ab0bc;
   text-decoration: none;
   font-weight: bold; 
 }

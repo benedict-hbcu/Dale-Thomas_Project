@@ -4,6 +4,8 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import CardGroup from 'react-bootstrap/CardGroup';
+import Button from 'react-bootstrap/Button';
+
 
 function Grid({title,imgUrl,body,artists,link}) {
   return (
@@ -22,14 +24,14 @@ function Grid({title,imgUrl,body,artists,link}) {
             <Card.Body>
               <Card.Title>Song Title: {title}</Card.Title>
               <Card.Text>
-                {artists}
+                Artist: {artists}
                  
               </Card.Text>
-                     <button> 
+                     <Button variant="warning" text="light"> 
                         <a href={link} target="_blank" rel='noopener noferrer'>
                           Song
                         </a>
-                      </button> 
+                      </Button> 
             </Card.Body>
           </Card>
     </CardGroup>
