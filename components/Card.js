@@ -3,25 +3,38 @@ import styles from '@/styles/Home.module.css'
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import CardGroup from 'react-bootstrap/CardGroup';
+import Button from 'react-bootstrap/Button';
 
-function Grid({title,imgUrl,body,artist,link}) {
+
+function Grid({title,imgUrl,body,artists,link}) {
   return (
-   
-          <Card>
-            <Card.Img variant="top" src= {imgUrl} alt='' />
-            <Card.Body>
-              <Card.Title>{title}</Card.Title>
-              <Card.Text>
-                <p>{artist}</p>
+    <CardGroup>
 
+    
+          <Card
+          bg='dark'
+          //key=
+          text ='light' 
+          style={{gap: 0 }}
+          className="mb-2"
+          >
+          
+            <Card.Img variant="top" src= {imgUrl} alt=' ' />
+            <Card.Body>
+              <Card.Title>Song Title: {title}</Card.Title>
+              <Card.Text>
+                Artist: {artists}
+                 
               </Card.Text>
-                     <button> 
+                     <Button variant="warning" text="light"> 
                         <a href={link} target="_blank" rel='noopener noferrer'>
                           Song
                         </a>
-                      </button>
+                      </Button> 
             </Card.Body>
           </Card>
+    </CardGroup>
    
   );
 }
