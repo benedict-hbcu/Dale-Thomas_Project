@@ -4,6 +4,10 @@ import styles from '@/styles/Home.module.css'
 import Slider from "react-slick";
 import NavbarComp from "../components/NavbarComp.js"
 const inter = Inter({ subsets: ['latin'] })
+const devid= Math.floor(Math.random() * 7);
+import devotions from '../components/devotion.json'
+import Image from 'next/image.js';
+// const [showPosts, setshowPosts] = useState('')
 const photos = [
   {
     name: 'photo 1',
@@ -30,6 +34,14 @@ const settings = {
 }
 
 export default function Home() {
+  // displayData = data.map(function(todo){
+  //   return(
+  //     <p key={todo.id}> {todo.title}</p>
+  //   )
+  // })
+  // console.log(devotions[0]["devotions"])
+  console.log(devotions.devotions[devid])
+  
   return (
     <>
       <Head>
@@ -42,7 +54,7 @@ export default function Home() {
         <main className={styles.main} >
           <NavbarComp/>
           <div style={{ padding: 24 }}>
-            <h1> ...</h1>
+            <h1> Prayer Place</h1>
             <Slider{...settings}>
               {photos.map((photo => {
                 return (
@@ -52,8 +64,16 @@ export default function Home() {
                 )
               }))}
             </Slider>
+           <div>
+            <h1>Daily Bread</h1>
+            <p><b>{devotions.devotions[devid].title}</b></p>
+            <p>{devotions.devotions[devid].Scripture}</p>
+            <p>{devotions.devotions[devid].message}</p>
+            <p><b>Prayer</b></p>
+            <p>{devotions.devotions[devid].prayer}</p>
+            <p>This message was brought to you by: <a href= {devotions.devotions[devid].messageRef}>{devotions.devotions[devid].messageRef}</a></p>
+           </div>
           </div>
-
         </main>
       </div>
     </>

@@ -1,10 +1,12 @@
 import { getPrayer } from "../../components/libs/sheets";
+import { getStaticProps } from "../../components/prpuller";
 
 export default async function read(req, res){
     if (req.method === 'GET'){
         try{
-            await getPrayer([JSON.parse(req.props)])
+            await getPrayer()
             res.status(200).send(true)
+            console.log()
         }
        catch(e){
         console.log(e)

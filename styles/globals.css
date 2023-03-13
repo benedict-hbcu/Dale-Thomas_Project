@@ -172,7 +172,6 @@ body{
   color: white;
 }
 .homeimg{
-  height: 100vh;
   background-image: url("../components/worship.png");
   background-repeat: no-repeat center center fixed;
   backdrop-filter: blur(20px);

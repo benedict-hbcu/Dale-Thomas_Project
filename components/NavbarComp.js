@@ -17,10 +17,9 @@ export default function NavbarComp(){
                         <Navbar.Collapse id="responvise-navbar-nav">
                             <Nav className="me-auto">
                                 <Nav.Link href="/">Home</Nav.Link>
-                                <Nav.Link href="/prayerbin">prayer bin</Nav.Link>
-                                <Nav.Link href="/prayerwall">prayer Wall </Nav.Link>
+                                <Nav.Link href="/prayerbin">Prayer Bin</Nav.Link>
+                                <Nav.Link href="/prayerwall">Prayer Wall </Nav.Link>
                                 <Nav.Link href="/musicwall">Music Wall</Nav.Link>
-                                <Nav.Link href="/wya">WYA?</Nav.Link>
                             </Nav>  
                         </Navbar.Collapse>
 
