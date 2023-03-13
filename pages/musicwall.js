@@ -48,7 +48,7 @@ export default function MusicWallPage() {
         <main className={styles.main} class="home">
           <NavbarComp/>
           <div>
-            <h1 class="label">Music Wall</h1>
+            <h1 class="label">Worship Wall</h1>
           </div>
           <div className='music'>
           <div class="container">      
