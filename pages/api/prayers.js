@@ -5,8 +5,9 @@ export default async function read(req, res){
     if (req.method === 'GET'){
         try{
             await getPrayer()
+            const response= await getPrayer()
             res.status(200).send(true)
-            console.log()
+            console.log("RESPONSE",response)
         }
        catch(e){
         console.log(e)

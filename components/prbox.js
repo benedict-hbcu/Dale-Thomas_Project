@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+// function redirect() {
+//   useRouter().push('/prayerwall')
+// }
  
 export default function ContactPage(){
     const [prayerText, setPrayerText] = React.useState("");
@@ -7,7 +10,7 @@ export default function ContactPage(){
     const handleSubmit = () => {
         const time= Date.now();
         const timestamp =new Date(time);
-        const ts =timestamp.toLocaleTimeString();
+        const ts =timestamp.toUTCString();
         const prayer = {
             PrayerRequest: prayerText
         };
@@ -19,6 +22,7 @@ export default function ContactPage(){
 
         console.log("prayer", prayer);
         console.log(body);
+        //useRouter().reload(window.location.pathname)
  
     };
 
