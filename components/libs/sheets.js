@@ -32,6 +32,7 @@ async function getPrayer() {
     });
 
     const rows = response.data.values;
+    console.log(rows)
     if (rows.length) {
       return rows.map((row) => ({
         title: row[2],

@@ -6,6 +6,7 @@ import NavbarComp from "../components/NavbarComp.js"
 const inter = Inter({ subsets: ['latin'] })
 const devid= Math.floor(Math.random() * 7);
 import devotions from '../components/devotion.json'
+import Image from 'next/image.js';
 // const [showPosts, setshowPosts] = useState('')
 const photos = [
   {
@@ -31,21 +32,6 @@ const settings = {
   slidestoscroll: 1,
   className: "slides"
 }
-// let displayData
-// function pulldevotion(){
-//   fetch('api/devotion.json')
-//   .then(response=>response.json())
-//   .then(responseData =>{
-//     console.log(responseData)
-//     displayData = responseData.map(function(todo){
-//       return(
-//         <p key={todo.id}>{todo.title}</p>
-//       )
-//     })
-//     console.log(responseData)
-//     setshowPosts(displayData)
-//   })
-// }
 
 export default function Home() {
   // displayData = data.map(function(todo){
@@ -54,19 +40,8 @@ export default function Home() {
   //   )
   // })
   // console.log(devotions[0]["devotions"])
-  const Devotional = () =>{
-    let data = require('../components/devotion.json');
-    return(
-      <>
-      <div>
-        <div><p>Title : {data[devid].title}</p></div>
-        <div> <p>{data[devid].scripture}</p> </div>
-        <div><p>{data[devid].message}</p></div>
-        <div><p>{data[devid].prayer}</p></div>
-      </div>
-      </>
-    )
-    }
+  console.log(devotions.devotions[devid])
+  
   return (
     <>
       <Head>
@@ -89,16 +64,18 @@ export default function Home() {
                 )
               }))}
             </Slider>
-            Devotional()
+           <div>
+            <h1>Daily Bread</h1>
+            <p><b>{devotions.devotions[devid].title}</b></p>
+            <p>{devotions.devotions[devid].Scripture}</p>
+            <p>{devotions.devotions[devid].message}</p>
+            <p><b>Prayer</b></p>
+            <p>{devotions.devotions[devid].prayer}</p>
+            <p>This message was brought to you by: <a href= {devotions.devotions[devid].messageRef}>{devotions.devotions[devid].messageRef}</a></p>
+           </div>
           </div>
         </main>
       </div>
     </>
   )
 }
-
-// export async function getServerSideProps(){
-//   const res = await fetch ('/../components/devotion.json')
-//   const data = await res.json()
-//   return {pops: {data}}
-// }
