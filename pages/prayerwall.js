@@ -11,6 +11,7 @@ import { useEffect,useState } from "react"
 
 
 export default function PrayerWallPage() {
+  
 const [pr, setPr] = useState([])
   useEffect(()=>{
     fetch("/api/prayers")
@@ -19,8 +20,23 @@ const [pr, setPr] = useState([])
         return res.json()
     })
     .then((data)=>{
-      console.log("DATA",data)
-      setPr(data)
+      const prayers = data.map((prayer, index) => {
+        console.log(prayer)
+        console.log(index)
+        if(index >= 0) {
+          console.log("Prayer at 1,1")
+          // console.log(prayer[1][0])
+            return {
+
+               prayer: prayer[1][0],
+                timestamp: prayer[1][1]
+            }
+          }
+        })
+      // console.log("DATA",data)
+      // console.log(prayer)
+      // console.log(timestamp)
+      setPr(prayers)
       // console.log(pr)
       
       //  console.log("DATA",data);
@@ -40,15 +56,6 @@ const [pr, setPr] = useState([])
       .catch((error)=>
       console.log("error", error))
     },[])
-    // const prayers = pr.map((prayer, index) => {
-    //   if(index > 0) {
-    //       return {
-    //           prayer: prayer[0],
-    //           timestamp: prayer[1]
-    //       }
-    //   }
-    
-    // })
     console.log(pr)
   
     return (
@@ -66,19 +73,14 @@ const [pr, setPr] = useState([])
             <h1>Prayer Wall</h1>
             <p><i><b>"And Jesus answered them, 'Have faith in God. Truly, I say to you, whoever says to this mountain, "Be taken up and thrown into the sea," and does not doubt in his heart, but believes that what he says will come to pass, it will be done for him. Therefore I tell you, whatever you ask in prayer, believe that you have received it, and it will be yours. And whenever you stand praying, forgive, if you have anything against anyone, so that your Father also who is in heaven may forgive you your trespasses.'" Mark 11:22-25</b></i></p>
             <p><b>Brothers and sisters. Let us pray without ceasing.</b></p>
-            {/* {prayers.map((prayerObj) => {
-              return <div>
-                <div class="bubble bubble-bottom-left">
-                          <div>
-                            <p>{prayerObj.prayer}</p>
-                          
-                          </div>
-                          <div class="time">
-                            <i>{prayerObj.timestamp}</i>
-                          </div>
-                        </div>
-              </div> */}
-            {/* })} */}
+            <div>
+              {pr.map((prayerObj) => {
+                return <div>
+                  <p>{prayerObj.prayer}</p>
+                  <p>{prayerObj.timestamp}</p>
+              </div>
+              })}
+            </div>
           </div>
         </main>
       </>
