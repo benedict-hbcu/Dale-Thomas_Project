@@ -304,4 +304,32 @@ a{
 .card.IMG{
   height: 100%
 }
-  
+.bubble {
+  position: relative;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  width: 300px;
+  background: rgb(236, 239, 194);
+  border-radius: 40px;
+  padding: 24px;
+  text-align: left;
+  color: #000;
+}
+
+.bubble-bottom-left:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 24px solid rgb(236, 239, 194);
+  border-right: 12px solid transparent;
+  border-top: 12px solid rgb(236, 239, 194);
+  border-bottom: 20px solid transparent;
+  left: 32px;
+  bottom: -24px;
+}
+.time{
+  text-align:right;
+  padding:-10px
+}

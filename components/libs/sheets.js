@@ -32,39 +32,38 @@ async function getPrayer() {
     });
 
     const rows = response.data.values;
-    console.log(rows)
-    if (rows.length) {
-      return rows.map((row) => ({
-        title: row[2],
-        subtitle: row[3],
-        code: row[4],
-        browser: row[5],
-        short_name: row[17],
-        descriptions: row[19],
-      }));
+    // rows.forEach(element => {
+    //     const markup=`
+    //     <div class="bubble bubble-bottom-left">
+    //           <div>
+    //             <p>${element[0]}</p>
+               
+    //           </div>
+    //           <div class="time">
+    //             <i>${element[1]}</i>
+    //           </div>`
+    //   })
+    console.log(rows.length)
+    for (let i = 0; i < rows.length; i++) { 
+      console.log(rows[i]);
     }
+    if (rows.length) {
+      // return rows.map((row) => ({
+      //   title: row[2],
+      //   subtitle: row[3],
+      //   code: row[4],
+      //   browser: row[5],
+      //   short_name: row[17],
+      //   descriptions: row[19],
+      // }));
+    }
+    return [rows];
   } catch (err) {
     console.log(err);
   }
-  return [];
+  
 }
 
-// async function savePrayer(row) {
-//     try {
-//         await doc.useServiceAccountAuth({
-//             client_email: GOOGLE_CLIENT_EMAIL,
-//             private_key: GOOGLE_SERVICE_PRIVATE_KEY.replace(/\\n/g, '\n'),
-//         });
-//           // loads document properties and worksheets
-//           await doc.loadInfo();
-      
-//           const sheet = doc.sheetsById[SPREADSHEET_ID];
-//           await sheet.addRow(row);
-//     } catch (e) {
-//         console.error('Error: ', e);
-//     };
-//     return [];
-// } 
  const savePrayer= async (values) => {
   console.log(process.env.SPREADSHEET_ID)
   console.log(process.env.GOOGLE_CLIENT_EMAIL)
